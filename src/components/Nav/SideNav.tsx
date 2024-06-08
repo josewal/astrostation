@@ -21,6 +21,7 @@ import {
   useToggleYoutube,
   useSideNavOrderStore,
   useToggleKanban,
+  useBrainfmMusic,
 } from "@Store";
 import { useState, useEffect } from "react";
 import useSetDefault from "@App/utils/hooks/useSetDefault";
@@ -39,6 +40,7 @@ export const SideNav = () => {
   const { isTimerToggled, setIsTimerToggled } = useToggleTimer();
   const { isTasksToggled, setIsTasksToggled } = useToggleTasks();
   const { isSpotifyToggled, setIsSpotifyToggled } = useSpotifyMusic();
+  const { isBrainfmToggled, setIsBrainfmToggled } = useBrainfmMusic();
   const { isQuoteToggled, setIsQuoteToggled } = useToggleQuote();
   const { isTwitchToggled, setIsTwitchToggled } = useToggleTwitch();
   const { isYoutubeToggled, setIsYoutubeToggled } = useToggleYoutube();
@@ -49,6 +51,7 @@ export const SideNav = () => {
   const { isMusicShown } = useToggleMusic();
   const { isKanbanShown } = useToggleKanban();
   const { isSpotifyShown } = useSpotifyMusic();
+  const { isBrainfmShown } = useBrainfmMusic();
   const { isDarkModeShown } = useDarkToggleStore();
   const { isFullscreenShown } = useFullScreenToggleStore();
   const { isQuoteShown } = useToggleQuote();
@@ -205,6 +208,16 @@ export const SideNav = () => {
       toggleString: "Youtube Toggled",
       toggleIcon: "▶️",
       isShown: isYoutubeShown,
+    },
+    {
+      id: "13",
+      content: <FaSpotify className="h-6 w-6" />,
+      tooltipTitle: "Brain.fm",
+      isToggled: isBrainfmToggled,
+      setToggled: setIsBrainfmToggled,
+      toggleString: "Brain.fm Toggled",
+      toggleIcon: "🎧",
+      isShown: isBrainfmShown,
     },
   ];
 

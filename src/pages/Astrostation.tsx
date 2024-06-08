@@ -20,6 +20,8 @@ import {
   usePosKanban,
   useGrid,
   useSetBackground,
+  useBrainfmMusic,
+  useBrainfmPos,
 } from "@Store";
 import { Player } from "@Components/Player/Player";
 import { Timer } from "@Components/Timer/Timer";
@@ -45,12 +47,14 @@ import clsx from "clsx";
 import React from "react";
 import { Background } from "@App/App";
 import BottomButtons from "@Components/Nav/BottomButtons";
+import { BrainFm } from "../components/Player/BrainFm/Player";
 
 export const Astrostation = React.forwardRef<HTMLDivElement>((_props, ref) => {
   const { isMusicToggled, isMusicShown } = useToggleMusic();
   const { isTimerToggled, isTimerShown } = useToggleTimer();
   const { isTasksToggled, isTasksShown } = useToggleTasks();
   const { isSpotifyToggled, isSpotifyShown } = useSpotifyMusic();
+  const { isBrainfmToggled, isBrainfmShown } = useBrainfmMusic();
   const { isStickyNoteShown } = useToggleStickyNote();
   const { isQuoteToggled, isQuoteShown } = useToggleQuote();
   const { isTwitchToggled, isTwitchShown } = useToggleTwitch();
@@ -61,6 +65,7 @@ export const Astrostation = React.forwardRef<HTMLDivElement>((_props, ref) => {
   const { taskPosX, taskPosY, setTaskPos } = usePosTask();
   const { musicPosX, musicPosY, setMusicPos } = usePosMusic();
   const { spotifyPosX, spotifyPosY, setSpotifyPos } = usePosSpotify();
+  const { brainfmPosX, brainfmPosY, setBrainfmPos } = useBrainfmPos();
   const { quotePosX, quotePosY, setQuotePos } = usePosQuote();
   const { timerPosX, timerPosY, setTimerPos } = usePosTimer();
   const { stickyNotes, setStickyNotesPos } = useStickyNote();
@@ -117,6 +122,9 @@ export const Astrostation = React.forwardRef<HTMLDivElement>((_props, ref) => {
           </div>
           <div className={clsx(isSpotifyToggled ? "block" : "hidden")}>
             <Spotify />
+          </div>
+          <div className={clsx(isBrainfmToggled ? "block" : "hidden")}>
+            <BrainFm />
           </div>
           <div className={clsx(isTimerToggled ? "block" : "hidden")}>
             <Timer />
@@ -188,6 +196,16 @@ export const Astrostation = React.forwardRef<HTMLDivElement>((_props, ref) => {
             gridValues={grid}
           >
             <Spotify />
+          </DWrapper>
+          <DWrapper
+            toggleHook={isBrainfmToggled && isBrainfmShown}
+            defaultX={brainfmPosX}
+            defaultY={brainfmPosY}
+            setPosition={setBrainfmPos}
+            isSticky={false}
+            gridValues={grid}
+          >
+            <BrainFm />
           </DWrapper>
           <DWrapper
             toggleHook={isQuoteToggled && isQuoteShown}
