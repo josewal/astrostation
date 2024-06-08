@@ -81,18 +81,6 @@ export const WidgetControlModal = ({ isVisible = false, onClose }) => {
               Spotify
               <FaSpotify className="h-6 w-full" />
             </div>
-            <div
-              onClick={() =>
-                toggledToastNotification(isBrainfmShown, setIsBrainfmShown, "Brain.fm Widget Added", 750, "🎧")
-              }
-              className={clsx(
-                "grid cursor-pointer content-center justify-center gap-2 rounded md:hover:bg-gray-200 md:hover:text-gray-800 md:dark:hover:bg-violet-500",
-                isBrainfmShown && "dark:bg-violet-500 md:bg-gray-200 md:text-gray-800"
-              )}
-            >
-              Brain.fm
-              <BrainfmIcon className="h-6 w-full" />
-            </div>
 
             <div
               onClick={() => toggledToastNotification(isMusicShown, setIsMusicShown, "Music Widget Added", 750, "🎧")}
@@ -224,6 +212,21 @@ export const WidgetControlModal = ({ isVisible = false, onClose }) => {
               Youtube
               <BsYoutube className="h-6 w-full" />
             </div>
+            {isDesktop && (
+              <div
+                onClick={() =>
+                  toggledToastNotification(isBrainfmShown, setIsBrainfmShown, "Brain.fm Widget Added", 750, "🎧")
+                }
+                className={clsx(
+                  "grid cursor-pointer content-center justify-center gap-2 rounded md:hover:bg-gray-200 md:hover:text-gray-800 md:dark:hover:bg-violet-500",
+                  isBrainfmShown && "dark:bg-violet-500 md:bg-gray-200 md:text-gray-800"
+                )}
+              >
+                Brain.fm
+                <BrainfmIcon className="h-6 w-full" />
+              </div>
+            )}
+
             <div
               onClick={() =>
                 toggledToastNotification(isKanbanShown, setIsKanbanShown, "Kanban board Widget Added", 750, "📃")

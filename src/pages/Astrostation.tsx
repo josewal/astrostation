@@ -123,9 +123,6 @@ export const Astrostation = React.forwardRef<HTMLDivElement>((_props, ref) => {
           <div className={clsx(isSpotifyToggled ? "block" : "hidden")}>
             <Spotify />
           </div>
-          <div className={clsx(isBrainfmToggled ? "block" : "hidden")}>
-            <BrainFm />
-          </div>
           <div className={clsx(isTimerToggled ? "block" : "hidden")}>
             <Timer />
           </div>
