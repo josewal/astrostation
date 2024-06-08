@@ -24,6 +24,7 @@ export const BrainFm = () => {
           height="700"
           width="100%"
           frameBorder="0"
+          style={{ borderRadius: "10px" }}
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         ></iframe>
       </div>
