@@ -24,6 +24,7 @@ import {
 } from "@Store";
 import useMediaQuery from "@Utils/hooks/useMediaQuery";
 import { toggledToastNotification } from "@Utils/toast";
+import { BrainfmIcon } from "../Player/BrainFm/Icon";
 
 export const WidgetControlModal = ({ isVisible = false, onClose }) => {
   const { isMusicShown, setIsMusicShown } = useToggleMusic();
@@ -90,7 +91,7 @@ export const WidgetControlModal = ({ isVisible = false, onClose }) => {
               )}
             >
               Brain.fm
-              <FaSpotify className="h-6 w-full" />
+              <BrainfmIcon className="h-6 w-full" />
             </div>
 
             <div

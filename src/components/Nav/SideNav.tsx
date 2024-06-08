@@ -30,6 +30,7 @@ import { defaultToast } from "@Utils/toast";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { fullscreenChanged, toggleFullScreen } from "@Utils/fullscreen";
 import { DraggableNavItem } from "./DraggableNavItem";
+import { BrainfmIcon } from "../Player/BrainFm/Icon";
 
 export const SideNav = () => {
   const { isDark, toggleDarkMode } = useDarkToggleStore();
@@ -211,7 +212,7 @@ export const SideNav = () => {
     },
     {
       id: "13",
-      content: <FaSpotify className="h-6 w-6" />,
+      content: <BrainfmIcon className="h-6 w-6" />,
       tooltipTitle: "Brain.fm",
       isToggled: isBrainfmToggled,
       setToggled: setIsBrainfmToggled,
