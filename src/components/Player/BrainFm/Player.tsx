@@ -26,7 +26,7 @@ export const BrainFm = () => {
       <div className="cancelDrag justify-center">
         <iframe
           src={`https://my.brain.fm/`}
-          height="380"
+          height="700"
           width="100%"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
